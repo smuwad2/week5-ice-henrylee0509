@@ -39,6 +39,14 @@
                     console.log(error);
                 }
             }
+            // format
+            // div
+            // h2
+            // table
+            // tb
+            // tr
+            // th
+            // td
             function generateTable(dataObj){
                 // retrieve records
                 // const records = response.data.records;
@@ -66,12 +74,15 @@
                 tableBodyEle.appendChild(tableRowEle);
                 tableEle.appendChild(tableBodyEle)
                 resultDiv.appendChild(tableEle)
-
-                // loop through elements in records
+                // loop through records
                 for(let i=0; i<dataObj["records"].length;i++){
+                    // new table row for each object / element in record
                     const tableRowEle = document.createElement('tr')
+                    // loop through object for each records -> each record has multiple key value pair
                     for(let j=0; j<tableHeadings.length; j++){
+                        // access properties of record objects with keys
                         const propertyVal = dataObj["records"][i][tableHeadings[j]];
+                        // create td element to set value / property 
                         const tableDataEle = document.createElement('td')
                         tableDataEle.innerText = propertyVal
                         tableRowEle.appendChild(tableDataEle)
